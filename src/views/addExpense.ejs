@@ -1,0 +1,21 @@
+<!-- views/addExpense.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+</head>
+<body>
+    <h1>Add Expense</h1>
+    <form action="/add" method="post"> <!-- Form action points to the route for adding expense -->
+        <label for="item">Item:</label>
+        <input type="text" id="item" name="item"> <!-- Input field for item -->
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price"> <!-- Input field for price -->
+        <button type="submit">Add Expense</button> <!-- Submit button to add the expense -->
+    </form>
+</body>
+</html>
+
