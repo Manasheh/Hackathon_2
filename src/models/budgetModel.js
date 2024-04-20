@@ -27,6 +27,7 @@ const _deleteExpense = async (id) => {
         await db.transaction(async (trx) => {
             await trx('expenses').where({ id }).del();
         });
+        await db.raw('ALTER SEQUENCE public.expenses_id_seq RESTART WITH 1');
     } catch (error) {
         throw error;
     }

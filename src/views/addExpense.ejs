@@ -1,21 +1,91 @@
-<!-- views/addExpense.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Expense</title>
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        }
+       body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #17202A; 
+       }
+       .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem;
+        width: 40%;
+        height: 30%;
+       }
+       h1 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: white;
+       }
+      
+       form {
+        width: 60%;
+        padding: 3rem;
+        background-color: rgb(236, 236, 240);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+       }
+       label {
+        color: black;
+        text-transform: uppercase;
+        font-weight: bold;
+       }
+       .input-container {
+        margin-bottom: 1rem;
+       }
+       input {
+        padding: 0.4rem 0.8rem;
+        font-size: 1.2rem;
+       }
+       button {
+        color: white;
+        text-decoration: none;
+        padding: 0.7rem 2rem;
+        border-radius: 6px;
+        font-weight: 500;
+        outline: none;
+        border: transparent;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        background-color: orange;
+        margin-left: -0.9rem;
+       }
+    </style>
 </head>
 <body>
+    <div class="container">
     <h1>Add Expense</h1>
-    <form action="/add" method="post"> <!-- Form action points to the route for adding expense -->
-        <label for="item">Item:</label>
-        <input type="text" id="item" name="item"> <!-- Input field for item -->
-        <label for="price">Price:</label>
-        <input type="text" id="price" name="price"> <!-- Input field for price -->
-        <button type="submit">Add Expense</button> <!-- Submit button to add the expense -->
+    <form action="/add" method="post"> 
+        <div class="input-container">
+            <label for="item">Item:</label>
+        <input type="text" id="item" name="item"> 
+        </div>
+        <div class="input-container">
+            <label for="price">Price:</label>
+        <input type="text" id="price" name="price"> 
+        </div>
+        
+        <button type="submit">Add Expense</button> 
     </form>
+
+</div>
 </body>
 </html>
 
