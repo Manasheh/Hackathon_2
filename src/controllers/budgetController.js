@@ -1,4 +1,8 @@
-const { _getUsersBudget, _addExpense, _updateExpense, _getExpenseById,_deleteExpense } = require('../models/budgetModel.js');
+const { _getUsersBudget,
+     _addExpense, _updateExpense,
+      _getExpenseById,
+      _deleteExpense 
+    } = require('../models/budgetModel.js');
 
 
 const getUserBudget = async (req, res) => {
@@ -44,7 +48,6 @@ const updateExpense = async (req, res) => {
     try {
         const updatedExpense = await _updateExpense(id, item, price);
         if (updatedExpense) {
-            // Redirect to the home page after updating the expense
             res.redirect('/');
         } else {
             res.status(404).json({ error: 'Expense not found.' });
@@ -57,8 +60,8 @@ const updateExpense = async (req, res) => {
 const deleteExpense = async (req, res) => {
     const { id } = req.params;
     try {
-        await _deleteExpense(id); // Implement the delete logic in the model
-        res.redirect('/'); // Redirect to the home page after deletion
+        await _deleteExpense(id); 
+        res.redirect('/'); 
     } catch (error) {
         console.log(error);
         res.status(500).send('Internal Server Error');
